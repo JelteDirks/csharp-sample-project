@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+// See https://aka.ms/new-console-template for more information
 //Implements some basic functions
 using System;
 public class Trilateration
@@ -72,11 +73,29 @@ public class Trilateration
         return a * a;
     }
 
+    //Test Case
+    public void test()
+    {
+        double dist = 1.4142135623730951;
+        int[] anchor = { 0, 0, 2 };
+        int[] point = { 1, 1 };
+        double result = CalculateDistance(anchor, point);
+        if (result == dist)
+        {
+            Console.WriteLine("Test passed");
+        }
+        else
+        {
+            Console.WriteLine("Test failed");
+        }
+    }
+
     //Main args method with object instance
     static void Main(string[] args)
     {
         Trilateration hospital = new Trilateration();
         hospital.calculate(hospital.points);
+        //hospital.test();
 
     }
 }
